@@ -1,0 +1,54 @@
+import random    
+
+def correctResp():
+    cDo = random.randrange(1, 5)
+    if cDo == 1:
+        return 'Very good!'
+    elif cDo == 2:
+        return 'Excellent!'
+    elif cDo == 3:
+        return 'Nice Work!'
+    else:
+        return 'Keep up the good work!'
+
+def incorrectResp():
+    iDo = random.randrange(1, 5)
+    if iDo == 1:
+        return 'No. Please try again.'
+    elif iDo == 2:
+        return 'Wrong. Try once more.'
+    elif iDo == 3:
+        return "Don't give up!"
+    else:
+        return 'No. Keep trying.'
+
+fNum = random.randrange(1, 12)
+lNum = random.randrange(1, 12)
+answer = fNum * lNum
+print("What is", fNum, "times", lNum, "?")
+uGuess = int(input('Enter in the answer: '))
+
+while uGuess != answer:
+    print(incorrectResp())
+    uGuess = int(input('Enter in the answer: '))
+
+print(correctResp())  # Print the correct response after the loop
+
+loop = input('Wanna play a multiplication game?\nEnter to continue ')
+while loop != "end":
+    fNum = random.randrange(1, 12)
+    lNum = random.randrange(1, 12)
+    answer = fNum * lNum
+    print("What is", fNum, "times", lNum, "?")
+    uGuess = int(input('Enter in the answer: '))
+   
+    while uGuess != answer:
+        print(incorrectResp())
+        uGuess = int(input('Enter in the answer: '))
+
+    print(correctResp())  # Print the correct response after the loop
+
+    loop = input('Wanna play a multiplication game?\nEnter to continue ')
+
+if loop == "end":
+    print("Thanks for playing!")
